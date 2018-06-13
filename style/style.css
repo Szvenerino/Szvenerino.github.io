@@ -1,0 +1,321 @@
+/* ====================================================  GLOBAL DEFINITION  ==================================================== */
+
+*, ::before, ::after /*Style für Header*/
+{
+	box-sizing: border-box;
+}
+
+body /*Style-Einstellungen für den Body*/
+{
+	max-width: 80em; /*Webiste-Breite*/
+	min-height: 68.5em; /*Website-Hoehe*/
+	margin: 0 auto;
+	padding: 0 1em;
+	font: normal 1em Arial, sans-serif; /*Schriftart*/
+	color: darkRed; /*currentColor*/
+}
+
+p, ol, ul, dl {color: #333;}/*Geshchriebener Text, außer Überschriften wieder schwarz*/
+
+/* ====================================================  HEADER  ==================================================== */
+
+header 
+{
+	padding: 3em;
+	background-color: #e7e8ee;
+}
+
+header a 
+{
+	text-decoration: none; /*Zeile ist nötig, da "Snooker" sonst unterstrichen wäre*/
+}
+
+/* ====================================================  CONTENT  ==================================================== */
+
+h1, h2, h3 
+{
+	color: currentColor; /*Überschriften Rot*/
+}
+
+a 
+{
+	color: currentColor; /*Alle a-Tags werden in der currentColor und Fett angezeigt*/
+	font-weight: bold;
+}
+
+a:focus, a:hover 
+{
+	background-color:gold; /*Beim Mausover über "Snooker" wird der Hintergrund gold*/
+}
+
+img
+{
+	max-width: 100%; /*Images haben immer 100 %. Wenn der Bildschirm kleiner wird, wird auch das Imag kleiner -> Responsiv*/
+	height: auto;
+}
+
+.fliessbild1 > div
+{
+	display: flex; /*Flexbox*/
+	float: right; /*Bild wird umflossen*/
+	padding-bottom: 1em; /*Abstand zum unteren Ende*/
+	padding-left: 1em; /*Abstand nach links*/
+}
+
+.fliessbild2 > div
+{
+	display: flex; /*Flexbox*/
+	float: left; /*Bild ist linksbündig und wird vom Text umflossen*/
+	padding-right: 1em; /*Abstand nach rechts*/  
+	padding-bottom: 1em; /*Abstand zum unteren Ende*/
+}
+
+.fliessbild4 > div 
+{
+	display: flex; /*Flexbox -> Bild wird zentriert*/
+	justify-content: center; /*Zentrieren*/
+}
+
+.fliessbilder-bilder-text
+{
+	display: flex; /*Flexbox für Bild und Text*/
+	flex-direction: row; /*Beide Flexboxen in Reihe*/
+}
+
+.fliessbilder-bilder
+{
+	widthwidth: 430px; /*Breite der Bilder*/
+	padding-top: 1em; /*Abstand nach oben*/
+	padding-right: 2em;
+}
+
+.fliessbilder-text
+{
+	width: 65.5%; /*Breite des Textes*/
+}
+
+.fliessbilder-bilder-text-reverse
+{
+	display: flex; /*Flexbox für Bild und Text*/
+	flex-direction: row; /*Beide Flexboxen in Reihe*/
+}
+
+.fliessbilder-text-reverse
+{
+	width: 65.5%; /*Breite der Felder*/
+	padding-right: 2em; /*Abstand nach rechts*/  
+}
+
+.fliessbilder-bilder-reverse
+{
+	width: 400px; /*Breote der Bilder*/
+	padding-top: 1em; /*Abstand nach oben*/
+}
+
+dl /*Layout für Kontakt.... bei Impressum*/
+{
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-gap: 1em 2em;
+	margin-bottom: 3em;
+}
+
+dt 
+{
+	font-weight: bold; /*Layout für Kontakt... -> Fett*/
+}
+
+#myBtn 
+{
+	display: none; /* Standardmäßig ausgeblendet */
+    position: fixed; /* Feste Position */
+    bottom: 20px; /* Platziert den Button am unteren Rand der Seite */
+    right: 30px; /* Platzier den Button 30px von rechts */
+    z-index: 99; /* Stellt sicher, dass es sich nicht überlappt */
+    border: none; /* Kein Rahmen */
+    outline: none; /* Kein Umriss */
+    color: white; /* Farbe des Textes */
+    cursor: pointer; /* Fügt einen Mauszeiger auf Hover hinzu */
+    padding: 15px; /* Abstand */
+    border-radius: 20px; /* Runde Ecken */
+    font-size: 18px; /* Schriftgröße */
+	background: rgba(30, 52, 142, 0.5); /* Halb-durchsichtig für bessere Lesbarkeit */
+	opacity: 0.6; /*folgende 4 Zeilen für  bessere Lesbarkeit*/
+	-moz-opacity:0.6;
+	-khtml-opacity: 0.6;
+	filter: alpha(opacity=60);
+}
+
+#myBtn:hover 
+{
+	background-color: #555;
+}
+
+/* ====================================================  NAV  ==================================================== */
+
+nav ul 
+{
+	box-shadow: 0 .6em .3em 0 rgba(0, 0, 0, .75); /*Schatten um die Navigation*/
+	text-align: center; /*Verlinkungen Zentriert*/
+	margin: 0;
+	padding: 0;
+	list-style-type: none; /*Ausblenden der Listen-Punkte*/
+}
+
+nav a 
+{
+	background-color: darkred; /*Hintergrundfarbe*/
+	color: white; /*Weiße Schrift für Lesbarkeit*/
+	text-decoration: none; /*Zeile ist nötig, da Verlinkungen sonst unterstrichen wären*/
+	display: inline-block;
+	width: 95%;
+	margin: .5em 0;
+	padding: .5em 1em;
+	border-radius: .5em;
+}
+
+nav a[aria-current="page"]
+{
+	color: orange; /*Aktueller Link wird Orange hinterlegt*/
+	font-weight: bold;/*und fett*/
+}
+
+nav a:hover, nav a:focus 
+{
+	background-color: gold; /*Beim Mausover über Links werden die Hintergründe gold*/
+	color: currentColor;
+}
+
+/* ====================================================  FOOTER  ==================================================== */
+
+footer 
+{
+	display: flex; /*Flexbox für Fußzeile*/
+	list-style-type: none; /*Ausblenden des Listen-Punktes*/
+}
+
+footer p 
+{
+	flex: 1 1 100%; /*Abstand der beiden Boxen zueinander*/
+}
+
+
+footer a 
+{
+	color: #999; /*Dezente Farbe für "Impressum"*/
+}
+
+footer p 
+{
+	margin-top: 0;
+	padding-top: 0; /*Ausrichtung des Paragraphen*/
+	text-align: right;
+	color: #999;
+}
+
+
+/* ====================================================  LAYOUT  ==================================================== */
+
+main
+{
+	padding: 1em 0; /*alle Blöcke haben 100%, Navigation unten*/
+	margin: 2em 0;
+}
+
+nav ul 
+{
+	display: flex; /* Navigationselemente werden untereinander angezeigt */
+	flex-direction: column;
+}
+
+@media screen and (min-width: 45em) 
+{
+	header /*2-Spaltenlayout mit breiterem aside*/
+	{
+		background: #e7e8ee url('../img/Bild1.jpg') no-repeat right bottom ;
+		background-size: contain;
+	}
+
+	nav ul /* Navigation wird nebeneinander ausgerichtet. */
+	{
+		flex-direction: row;
+		background-color: darkred;
+	}
+
+	nav li /* Navigation wird nebeneinander ausgerichtet. */
+	{
+		margin: 0;
+		flex: 1 1 0%;
+	}
+
+	main /* Main wird zum Flex-Container */
+	{
+		display: flex;
+		flex-flow: row wrap;
+	}
+
+	main > * 
+	{
+		flex: 1 100%;  /* Alle Kindelemente werden über die volle Breite dargestellt */
+	}
+
+	section 
+	{
+		flex: 1 48%;  /* Diese Elemente erhalten eine halbe Breite */
+		margin: 1%;
+	}
+}
+
+@media screen and (min-width: 58em) 
+{
+	section, aside /* 2-Spaltenlayout mit breiterem aside */
+	{
+		flex: 1 31%;  /* Diese Elemente erhalten eine Breite von 1/3.  */
+		margin: 1%;
+	}
+
+	article 
+	{
+		flex: 0 0 100%;
+		margin: 1%;
+	}
+
+	article li, article blockquote 
+	{
+		max-width: 40em;
+	}
+
+	aside p 
+	{
+		margin-bottom: 3em;
+	
+	}
+	
+	aside p:last-child 
+	{
+		margin-bottom: 1.2em;
+	}
+}
+
+@media screen and (max-width: 45em)
+{
+	.fliessbilder-bilder-text
+	{
+		flex-wrap: wrap; /*Flexboxen weden untereinander angezeigt*/
+	}
+	
+	.fliessbilder-bilder-text-reverse
+	{
+		flex-wrap: wrap; /*Flexboxen weden untereinander angezeigt*/
+	}
+	
+	.fliessbilder-text
+	{
+		width: 100%; /*Text hat eine 100%-ige Breite*/
+	}
+	
+	.fliessbilder-text-reverse
+	{
+		width: 100%; /*Text hat eine 100%-ige Breite*/
+	}
+}
